@@ -76,7 +76,7 @@ locals {
     if v.connection != null
   }
   lgw_virtual_network_gateway_connections = {
-    for k, v in var.local_network_gateways : "${k}-lgw" => merge(
+    for k, v in var.local_network_gateways : "${k}" => merge(
       v.connection,
       {
         local_network_gateway_id = v.id
